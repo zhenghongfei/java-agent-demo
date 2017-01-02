@@ -1,4 +1,4 @@
-package probe;
+package com.zhenghongfei.probe;
 
 import java.util.HashMap;
 import java.util.Map;

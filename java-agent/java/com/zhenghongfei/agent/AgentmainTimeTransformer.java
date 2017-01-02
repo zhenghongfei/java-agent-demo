@@ -4,11 +4,12 @@ import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
 
+import com.zhenghongfei.probe.Probes;
+
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtMethod;
 import javassist.LoaderClassPath;
-import probe.Probes;
 
 /**
  * 通过attach方式动态加载agent方式不允许修改方法体
@@ -41,8 +42,8 @@ public class AgentmainTimeTransformer implements ClassFileTransformer {
 			cc.defrost();
 
 			CtMethod cm = cc.getDeclaredMethod(JavaAgent.METHOD_NAME);
-			cm.insertBefore(String.format("probe.Probes.onBefore(%s);", id));
-			cm.insertAfter(String.format("probe.Probes.onSuccess(%s);", id));
+			cm.insertBefore(String.format("com.zhenghongfei.probe.Probes.onBefore(%s);", id));
+			cm.insertAfter(String.format("com.zhenghongfei.probe.Probes.onSuccess(%s);", id));
 			datas = cc.toBytecode();
 
 		} catch (Exception e) {

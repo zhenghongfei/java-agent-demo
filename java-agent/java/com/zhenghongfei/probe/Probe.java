@@ -1,4 +1,4 @@
-package probe;
+package com.zhenghongfei.probe;
 
 public class Probe {
 	private long startTime = 0L;
