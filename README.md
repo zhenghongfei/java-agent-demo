@@ -9,7 +9,7 @@
 + cd java-agent-test
 + 运行  java-dynamic-agent-test.bat 
 	
-	===========JavaAgentTestApp=============
+			JavaAgentTestApp
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds
@@ -27,7 +27,7 @@
 
 ##查看应用程序日志已经加载代理并生效
 
-	=========Java Agent with Agentmain========
+			Java Agent with Agentmain
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds
 	The Method Used Time Is:5001ms.
@@ -39,8 +39,8 @@
 + cd java-agent-test 
 + 运行java-agent-server.bat
 
-	=========Java Agent with Premain========
-	===========JavaAgentTestApp=============
+			Java Agent with Premain
+				JavaAgentTestApp
 	HelloBean.hello() -> sleep 5 seconds
 	The Method Used Time Is:5002ms
 	HelloBean.hello() -> sleep 5 seconds

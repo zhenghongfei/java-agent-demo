@@ -14,14 +14,14 @@ public class JavaAgent {
 	public static final String METHOD_NAME_PROXY = METHOD_NAME + "$proxy";
 
 	public static void premain(String agentOps, Instrumentation inst) {
-		System.out.println("=========Java Agent with Premain========");
+		System.out.println("	Java Agent with Premain		");
 
 		PremainTimeTransformer transformer = new PremainTimeTransformer();
 		inst.addTransformer(transformer, true);
 	}
 
 	public static void agentmain(String args, Instrumentation inst) {
-		System.out.println("=========Java Agent with Agentmain========");
+		System.out.println("	Java Agent with Agentmain	");
 
 		List<Class<?>> modifiedClasses = new ArrayList<Class<?>>();
 		for (Class<?> clazz : inst.getAllLoadedClasses()) {
