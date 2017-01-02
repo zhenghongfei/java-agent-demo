@@ -1,46 +1,46 @@
 # java-agent-demo
 
-# ±àÒë¹¤³Ì
+# ç¼–è¯‘å·¥ç¨‹
 + cd java-agent-demo
 + mvn package
 
-# ¶¯Ì¬¼ÓÔØ´úÀí·½Ê½(require jdk 6+)
-## Æô¶¯Ó¦ÓÃ³ÌÐò
+# åŠ¨æ€åŠ è½½ä»£ç†æ–¹å¼(require jdk 6+)
+## å¯åŠ¨åº”ç”¨ç¨‹åº
 + cd java-agent-test
-+ ÔËÐÐ  java-dynamic-agent-test.bat 
-	
-			JavaAgentTestApp
++ è¿è¡Œ  java-dynamic-agent-test.bat 
+
+		JavaAgentTestApp
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds		
 
-##jps²éÑ¯½ø³Ìid
+##jpsæŸ¥è¯¢è¿›ç¨‹id
 
 	3300 Jps
 	7032 java-agent-test-0.1-jar-with-dependencies.jar
 	7196
 
-##ÔËÐÐ´úÀí¿Í»§¶Ë
+##è¿è¡Œä»£ç†å®¢æˆ·ç«¯
 + cd java-agent
-+ ÔËÐÐ  java-agent-client.bat 7032
++ è¿è¡Œ  java-agent-client.bat 7032
 
 
-##²é¿´Ó¦ÓÃ³ÌÐòÈÕÖ¾ÒÑ¾­¼ÓÔØ´úÀí²¢ÉúÐ§
+##æŸ¥çœ‹åº”ç”¨ç¨‹åºæ—¥å¿—å·²ç»åŠ è½½ä»£ç†å¹¶ç”Ÿæ•ˆ
 
-			Java Agent with Agentmain
+		Java Agent with Agentmain
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds
 	The Method Used Time Is:5001ms.
 	HelloBean.hello() -> sleep 5 seconds
 	The Method Used Time Is:5000ms.
 
-# Æô¶¯¼ÓÔØ´úÀí·½Ê½(require jdk 5+)
-## Æô¶¯Ó¦ÓÃ³ÌÐò
+# å¯åŠ¨åŠ è½½ä»£ç†æ–¹å¼(require jdk 5+)
+## å¯åŠ¨åº”ç”¨ç¨‹åº
 + cd java-agent-test 
-+ ÔËÐÐjava-agent-server.bat
++ è¿è¡Œjava-agent-server.bat
 
 		Java Agent with Premain
-			JavaAgentTestApp
+		JavaAgentTestApp
 	HelloBean.hello() -> sleep 5 seconds
 	The Method Used Time Is:5002ms
 	HelloBean.hello() -> sleep 5 seconds
