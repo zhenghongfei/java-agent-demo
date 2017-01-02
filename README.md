@@ -9,12 +9,16 @@
 1. cd java-agent-test
 2. 运行  java-dynamic-agent-test.bat 
 
+***
+
 	JavaAgentTestApp
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds		
 
 ##jps查询进程id
+
+***
 
 	3300 Jps
 	7032 java-agent-test-0.1-jar-with-dependencies.jar
@@ -26,6 +30,8 @@
 
 
 ##查看应用程序日志已经加载代理并生效
+
+***
 
 	Java Agent with Agentmain
 	HelloBean.hello() -> sleep 5 seconds
