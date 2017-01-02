@@ -7,19 +7,25 @@ import java.util.List;
 
 public class JavaAgent {
 
+	public static final String CLASS_NAME = "com.zhenghongfei.HelloBean";
+
+	public static final String METHOD_NAME = "hello";
+
+	public static final String METHOD_NAME_PROXY = METHOD_NAME + "$proxy";
+
 	public static void premain(String agentOps, Instrumentation inst) {
-		System.out.println("=========Java Agent premain 方法被执行========");
+		System.out.println("=========Java Agent with Premain========");
 
 		PremainTimeTransformer transformer = new PremainTimeTransformer();
 		inst.addTransformer(transformer, true);
 	}
 
 	public static void agentmain(String args, Instrumentation inst) {
-		System.out.println("=========Java Dynamic Agent agentmain 方法被执行========");
+		System.out.println("=========Java Agent with Agentmain========");
 
 		List<Class<?>> modifiedClasses = new ArrayList<Class<?>>();
 		for (Class<?> clazz : inst.getAllLoadedClasses()) {
-			if (clazz.getName().matches("com.zhenghongfei.HelloBean")) {
+			if (clazz.getName().matches(CLASS_NAME)) {
 				modifiedClasses.add(clazz);
 			}
 		}
