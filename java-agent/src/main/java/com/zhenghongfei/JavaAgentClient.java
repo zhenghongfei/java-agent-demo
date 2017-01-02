@@ -25,10 +25,7 @@ public class JavaAgentClient {
 				if (path != null && path.startsWith("/") && OS.startsWith("Windows")) {
 					path = path.substring(1);
 				}
-				vm.loadAgent(path);
-				while (true) {
-					Thread.sleep(3000);
-				}
+				vm.loadAgent("F:/opensource/java-agent-demo/java-agent/target/java-agent-0.1-jar-with-dependencies.jar");
 			} finally {
 				if (vm != null) {
 					vm.detach();

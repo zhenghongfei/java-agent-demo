@@ -7,17 +7,15 @@ import java.util.List;
 
 public class JavaAgent {
 
-	public static void premain(String args, Instrumentation inst) {
-		main(args, inst);
+	public static void premain(String agentOps, Instrumentation inst) {
+		System.out.println("=========Java Agent premain 方法被执行========");
+
+		PremainTimeTransformer transformer = new PremainTimeTransformer();
+		inst.addTransformer(transformer, true);
 	}
 
 	public static void agentmain(String args, Instrumentation inst) {
-		main(args, inst);
-	}
-
-	private static void main(String agentOps, Instrumentation inst) {
-		System.out.println("=========Java Agent 方法被执行========");
-		System.out.println(agentOps);
+		System.out.println("=========Java Dynamic Agent agentmain 方法被执行========");
 
 		List<Class<?>> modifiedClasses = new ArrayList<Class<?>>();
 		for (Class<?> clazz : inst.getAllLoadedClasses()) {
@@ -25,13 +23,16 @@ public class JavaAgent {
 				modifiedClasses.add(clazz);
 			}
 		}
-		// 添加Transformer
-		TimeTransformer transformer = new TimeTransformer();
+
+		AgentmainTimeTransformer transformer = new AgentmainTimeTransformer();
 		inst.addTransformer(transformer, true);
+
 		try {
 			inst.retransformClasses(modifiedClasses.toArray(new Class[modifiedClasses.size()]));
 		} catch (UnmodifiableClassException e) {
 			e.printStackTrace();
+		} finally {
+			inst.removeTransformer(transformer);
 		}
 	}
 }

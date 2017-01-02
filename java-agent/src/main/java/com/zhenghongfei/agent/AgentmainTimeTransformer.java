@@ -11,11 +11,11 @@ import javassist.CtNewMethod;
 import javassist.LoaderClassPath;
 
 /**
- * 通过启动加载agent方式可以为类添加方法等操作
+ * 通过attach方式动态加载agent方式不允许修改方法体
  * 
  * @author Hongfei
  */
-public class PremainTimeTransformer implements ClassFileTransformer {
+public class AgentmainTimeTransformer implements ClassFileTransformer {
 
 	private static final String prefix = "\nlong startTime = System.currentTimeMillis();\n";
 	private static final String postfix = "\nlong endTime = System.currentTimeMillis();\n";

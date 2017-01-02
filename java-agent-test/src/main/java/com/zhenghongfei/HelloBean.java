@@ -1,19 +1,12 @@
 package com.zhenghongfei;
 
-public class HelloBean {
-	public void sayHello() {
-		try {
-			Thread.sleep(2000);
-			System.out.println("hello world!!");
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+import java.util.concurrent.TimeUnit;
 
-	public void sayHello2(String hello) {
+public class HelloBean {
+	public void hello() {
 		try {
-			Thread.sleep(1000);
-			System.out.println(hello);
+			TimeUnit.SECONDS.sleep(5);
+			System.out.println("HelloBean.hello() -> sleep 5 seconds");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
