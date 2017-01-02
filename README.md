@@ -12,7 +12,7 @@
 			JavaAgentTestApp
 	HelloBean.hello() -> sleep 5 seconds
 	HelloBean.hello() -> sleep 5 seconds
-	HelloBean.hello() -> sleep 5 seconds
+	HelloBean.hello() -> sleep 5 seconds		
 
 ##jps查询进程id
 
@@ -39,8 +39,8 @@
 + cd java-agent-test 
 + 运行java-agent-server.bat
 
-			Java Agent with Premain
-				JavaAgentTestApp
+		Java Agent with Premain
+			JavaAgentTestApp
 	HelloBean.hello() -> sleep 5 seconds
 	The Method Used Time Is:5002ms
 	HelloBean.hello() -> sleep 5 seconds
