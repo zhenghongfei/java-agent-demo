@@ -1,4 +1,9 @@
-/target/
-.settings
+#git ingnore eclipse
+target/*
+.settings/*
 .project
 .classpath
+
+#git ignore for idea
+.idea/*
+*.iml
